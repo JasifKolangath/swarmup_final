@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="jasif.swarmup"
+    android:versionCode="3"
+    android:versionName="2.9" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="23" />
+
+    <uses-feature
+        android:name="android.hardware.wifi.direct"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_BLUETOOTH_SHARE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="jasif.swarmup.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="jasif.swarmup.apps.facematch.FaceMatchDelegatorActivity" />
+        <activity android:name="jasif.swarmup.apps.facematch.FaceMatchWorkerActivity" />
+        <activity android:name="jasif.swarmup.apps.facematch.FinishedFaceMatchDelegatorActivity" />
+        <activity android:name="jasif.swarmup.worker.FinishedWorkerActivity" />
+
+        <service android:name="jasif.swarmup.wifidirect.WiFiDirectWorkerNonOwnerService" />
+
+        <activity android:name="jasif.swarmup.apps.mandelbrot.MandelbrotDelegatorActivity" />
+        <activity android:name="jasif.swarmup.apps.mandelbrot.MandelbrotWorkerActivity" />
+        <activity android:name="jasif.swarmup.apps.mandelbrot.FinishedMandelbrotDelegatorActivity" />
+        <activity android:name="jasif.swarmup.apps.IntegerSum.FinishedIntegerSumDelegatorActivity" />
+        <activity android:name="jasif.swarmup.apps.IntegerSum.IntegerSumDelegatorActivity" />
+        <activity android:name="jasif.swarmup.apps.IntegerSum.IntegerMain" />
+
+        <service
+            android:name="com.android.tools.fd.runtime.InstantRunService"
+            android:exported="true" />
+    </application>
+
+</manifest>
