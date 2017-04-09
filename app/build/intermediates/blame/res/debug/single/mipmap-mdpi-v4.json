@@ -1,5 +1,17 @@
 [
     {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_type_folder.png",
+        "source": "/Users/jasif_phacsin/.android/build-cache/8fb7b5330f608d52451f36a854ebde254a94f329/output/res/mipmap-mdpi-v4/ic_type_folder.png"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_type_file.png",
+        "source": "/Users/jasif_phacsin/.android/build-cache/8fb7b5330f608d52451f36a854ebde254a94f329/output/res/mipmap-mdpi-v4/ic_type_file.png"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_directory_parent.png",
+        "source": "/Users/jasif_phacsin/.android/build-cache/8fb7b5330f608d52451f36a854ebde254a94f329/output/res/mipmap-mdpi-v4/ic_directory_parent.png"
+    },
+    {
         "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_type_folder.png",
         "source": "/Users/jasif_phacsin/.android/build-cache/8fb7b5330f608d52451f36a854ebde254a94f329/output/res/mipmap-mdpi-v4/ic_type_folder.png"
     },

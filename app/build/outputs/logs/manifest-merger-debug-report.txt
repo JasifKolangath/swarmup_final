@@ -1,22 +1,22 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:2:1-58:12
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:2:1-58:12
 	package
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:3:5-28
-		INJECTED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:3:5-28
+		INJECTED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml
 	android:versionName
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:5:5-30
-		INJECTED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:5:5-30
+		INJECTED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml
 	android:versionCode
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:4:5-28
-		INJECTED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:4:5-28
+		INJECTED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:2:11-69
 uses-sdk
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:7:5-9:41
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:cardview-v7:23.4.0] /Users/jasif_phacsin/.android/build-cache/ddaaaf266dff19bbd5ccca53a5743159ff7733c2/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:design:23.4.0] /Users/jasif_phacsin/.android/build-cache/8766ea5767a56ca59fc929a220e6db9d8999ee6b/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:recyclerview-v7:23.4.0] /Users/jasif_phacsin/.android/build-cache/a8e4d4ee4dd71f0050af275fe914a0840bde273f/output/AndroidManifest.xml:20:5-43
@@ -29,70 +29,70 @@ MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/jasi
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:23.4.0] /Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:9:9-38
-		INJECTED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:9:9-38
+		INJECTED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:8:9-35
-		INJECTED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:8:9-35
+		INJECTED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml
 uses-feature#android.hardware.wifi.direct
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:11:5-13:35
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:11:5-13:35
 	android:required
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:13:9-32
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:13:9-32
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:12:9-52
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:12:9-52
 uses-permission#android.permission.BLUETOOTH
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:15:5-68
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:15:5-68
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:15:22-65
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:15:22-65
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:16:5-81
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:16:5-81
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:16:22-78
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:16:22-78
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:17:5-74
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:17:5-74
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:17:22-71
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:17:22-71
 uses-permission#android.permission.CAMERA
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:18:5-65
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:18:5-65
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:18:22-62
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:18:22-62
 uses-permission#android.permission.ACCESS_BLUETOOTH_SHARE
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:19:5-81
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:19:5-81
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:19:22-78
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:19:22-78
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:20:5-76
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:20:5-76
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:20:22-73
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:20:22-73
 uses-permission#android.permission.CHANGE_WIFI_STATE
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:21:5-76
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:21:5-76
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:21:22-73
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:21:22-73
 uses-permission#android.permission.CHANGE_NETWORK_STATE
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:22:5-79
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:22:5-79
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:22:22-76
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:22:22-76
 uses-permission#android.permission.INTERNET
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:23:5-67
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:23:22-64
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:23:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:24:5-79
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:24:5-79
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:24:22-76
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:24:22-76
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:25:5-75
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:25:5-75
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:25:22-72
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:25:22-72
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:26:5-80
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:26:5-80
 MERGED from [com.github.angads25:filepicker:1.1.0] /Users/jasif_phacsin/.android/build-cache/8fb7b5330f608d52451f36a854ebde254a94f329/output/AndroidManifest.xml:11:5-80
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:26:22-77
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:26:22-77
 application
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:28:5-56:19
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:28:5-56:19
 MERGED from [com.android.support:cardview-v7:23.4.0] /Users/jasif_phacsin/.android/build-cache/ddaaaf266dff19bbd5ccca53a5743159ff7733c2/output/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:23.4.0] /Users/jasif_phacsin/.android/build-cache/8766ea5767a56ca59fc929a220e6db9d8999ee6b/output/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:23.4.0] /Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/AndroidManifest.xml:25:5-20
@@ -102,76 +102,76 @@ MERGED from [com.android.support:support-v4:23.4.0] /Users/jasif_phacsin/.androi
 MERGED from [com.github.angads25:filepicker:1.1.0] /Users/jasif_phacsin/.android/build-cache/8fb7b5330f608d52451f36a854ebde254a94f329/output/AndroidManifest.xml:13:5-15:38
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/jasif_phacsin/.android/build-cache/eed63ad9dea9e321971ad863ba3d0738c81264aa/output/AndroidManifest.xml:9:5-20
 	android:label
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:31:9-41
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:31:9-41
 	android:supportsRtl
 		ADDED from [com.github.angads25:filepicker:1.1.0] /Users/jasif_phacsin/.android/build-cache/8fb7b5330f608d52451f36a854ebde254a94f329/output/AndroidManifest.xml:15:9-35
 	android:allowBackup
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:29:9-35
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:29:9-35
 	android:icon
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:30:9-45
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:30:9-45
 	android:theme
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:32:9-40
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:32:9-40
 activity#jasif.swarmup.MainActivity
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:33:9-41:20
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:33:9-41:20
 	android:label
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:35:13-45
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:35:13-45
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:34:13-41
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:34:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:36:13-40:29
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:36:13-40:29
 action#android.intent.action.MAIN
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:37:17-69
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:37:17-69
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:37:25-66
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:37:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:39:17-77
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:39:17-77
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:39:27-74
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:39:27-74
 activity#jasif.swarmup.apps.facematch.FaceMatchDelegatorActivity
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:42:9-79
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:42:9-79
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:42:19-76
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:42:19-76
 activity#jasif.swarmup.apps.facematch.FaceMatchWorkerActivity
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:43:9-76
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:43:9-76
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:43:19-73
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:43:19-73
 activity#jasif.swarmup.apps.facematch.FinishedFaceMatchDelegatorActivity
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:44:9-87
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:44:9-87
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:44:19-84
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:44:19-84
 activity#jasif.swarmup.worker.FinishedWorkerActivity
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:45:9-67
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:45:9-67
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:45:19-64
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:45:19-64
 service#jasif.swarmup.wifidirect.WiFiDirectWorkerNonOwnerService
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:47:9-79
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:47:9-79
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:47:18-76
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:47:18-76
 activity#jasif.swarmup.apps.mandelbrot.MandelbrotDelegatorActivity
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:49:9-81
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:49:9-81
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:49:19-78
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:49:19-78
 activity#jasif.swarmup.apps.mandelbrot.MandelbrotWorkerActivity
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:50:9-78
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:50:9-78
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:50:19-75
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:50:19-75
 activity#jasif.swarmup.apps.mandelbrot.FinishedMandelbrotDelegatorActivity
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:51:9-89
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:51:9-89
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:51:19-86
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:51:19-86
 activity#jasif.swarmup.apps.IntegerSum.FinishedIntegerSumDelegatorActivity
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:52:9-89
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:52:9-89
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:52:19-86
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:52:19-86
 activity#jasif.swarmup.apps.IntegerSum.IntegerSumDelegatorActivity
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:53:9-81
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:53:9-81
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:53:19-78
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:53:19-78
 activity#jasif.swarmup.apps.IntegerSum.IntegerMain
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:54:9-65
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:54:9-65
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:54:19-62
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:54:19-62
 activity#jasif.swarmup.apps.mandelbrot.MandelMain
-ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:55:9-73
+ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:55:9-73
 	android:name
-		ADDED from /Users/jasif_phacsin/SwarmUp_n/app/src/main/AndroidManifest.xml:55:19-61
+		ADDED from /Users/jasif_phacsin/swarmup_final/app/src/main/AndroidManifest.xml:55:19-61

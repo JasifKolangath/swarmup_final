@@ -2,5 +2,9 @@
     {
         "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
         "source": "/Users/jasif_phacsin/.android/build-cache/8766ea5767a56ca59fc929a220e6db9d8999ee6b/output/res/layout-sw600dp-v13/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/8766ea5767a56ca59fc929a220e6db9d8999ee6b/output/res/layout-sw600dp-v13/design_layout_snackbar.xml"
     }
 ]

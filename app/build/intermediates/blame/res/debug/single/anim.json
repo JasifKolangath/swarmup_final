@@ -1,23 +1,27 @@
 [
     {
-        "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
-        "source": "/Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/res/anim/abc_fade_in.xml"
-    },
-    {
-        "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
-        "source": "/Users/jasif_phacsin/.android/build-cache/8766ea5767a56ca59fc929a220e6db9d8999ee6b/output/res/anim/design_fab_out.xml"
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/8766ea5767a56ca59fc929a220e6db9d8999ee6b/output/res/anim/design_bottom_sheet_slide_out.xml"
     },
     {
         "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_out.xml",
         "source": "/Users/jasif_phacsin/.android/build-cache/8766ea5767a56ca59fc929a220e6db9d8999ee6b/output/res/anim/design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
-        "source": "/Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/res/anim/abc_popup_enter.xml"
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/res/anim/abc_slide_in_bottom.xml"
     },
     {
         "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/anim/marked_item_animation.xml",
         "source": "/Users/jasif_phacsin/.android/build-cache/8fb7b5330f608d52451f36a854ebde254a94f329/output/res/anim/marked_item_animation.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/res/anim/abc_grow_fade_in_from_bottom.xml"
     },
     {
         "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
@@ -32,12 +36,8 @@
         "source": "/Users/jasif_phacsin/.android/build-cache/8fb7b5330f608d52451f36a854ebde254a94f329/output/res/anim/unmarked_item_animation.xml"
     },
     {
-        "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
-        "source": "/Users/jasif_phacsin/.android/build-cache/8766ea5767a56ca59fc929a220e6db9d8999ee6b/output/res/anim/design_snackbar_out.xml"
-    },
-    {
-        "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/res/anim/abc_fade_out.xml"
     },
     {
         "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
@@ -50,6 +50,78 @@
     {
         "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
         "source": "/Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/marked_item_animation.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/8fb7b5330f608d52451f36a854ebde254a94f329/output/res/anim/marked_item_animation.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/8766ea5767a56ca59fc929a220e6db9d8999ee6b/output/res/anim/design_snackbar_in.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/8766ea5767a56ca59fc929a220e6db9d8999ee6b/output/res/anim/design_fab_out.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/8766ea5767a56ca59fc929a220e6db9d8999ee6b/output/res/anim/design_fab_out.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/unmarked_item_animation.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/8fb7b5330f608d52451f36a854ebde254a94f329/output/res/anim/unmarked_item_animation.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/8766ea5767a56ca59fc929a220e6db9d8999ee6b/output/res/anim/design_fab_in.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/8766ea5767a56ca59fc929a220e6db9d8999ee6b/output/res/anim/design_snackbar_out.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/8766ea5767a56ca59fc929a220e6db9d8999ee6b/output/res/anim/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/8766ea5767a56ca59fc929a220e6db9d8999ee6b/output/res/anim/design_snackbar_out.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/jasif_phacsin/.android/build-cache/51f1c8406351020e0cb83c94d26f1db6e1d056ab/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
     },
     {
         "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",

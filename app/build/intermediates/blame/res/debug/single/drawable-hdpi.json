@@ -1,7 +1,15 @@
 [
     {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_launcher.png",
+        "source": "/Users/jasif_phacsin/swarmup_final/app/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
         "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_launcher.png",
         "source": "/Users/jasif_phacsin/SwarmUp_n/app/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/jasif_phacsin/swarmup_final/app/build/intermediates/res/merged/debug/drawable-hdpi/machine.png",
+        "source": "/Users/jasif_phacsin/swarmup_final/app/src/main/res/drawable-hdpi/machine.png"
     },
     {
         "merged": "/Users/jasif_phacsin/SwarmUp_n/app/build/intermediates/res/merged/debug/drawable-hdpi/machine.png",
