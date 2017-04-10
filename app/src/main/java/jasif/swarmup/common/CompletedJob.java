@@ -59,25 +59,4 @@ public class CompletedJob implements Serializable {
 		this.data = pData;
 	}
 
-//	public int[][] getResultSet() {
-//		return resultSet;
-//	}
-//
-//	public void setResultSet(int[][] resultSet) {
-//		this.resultSet = resultSet;
-//	}
-
-//	public Object clone(){
-//		CompletedJob cj = new CompletedJob();
-//		cj.stringValue = this.stringValue;
-//		cj.intValue = this.intValue;
-//		cj.mode = this.mode;
-////		cj.data = this.data.;
-////		if(this.results!=null){
-////			cj.results = new byte[this.results.length];
-////			System.arraycopy(this.results, 0, cj.results, 0, this.results.length);
-////		}
-//		
-//		return cj;
-//	}
 }

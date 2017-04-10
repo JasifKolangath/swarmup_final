@@ -221,34 +221,6 @@ public class WiFiDirectWorkerNonOwnerService extends IntentService {
 			wrtingThreads.offer(w);
 		}
 
-		// if (oos != null) {
-		// synchronized (this) {
-		// try {
-		// Log.d("WorkerBroadcastReceiver",
-		// "before BROADCAST_WORKER_INIT_STEALING_ACTION");
-		// while (this.iswriting) {
-		// this.wait();
-		// Log.d("WorkerBroadcastReceiver",
-		// "wait BROADCAST_WORKER_INIT_STEALING_ACTION");
-		// }
-		//
-		// iswriting = true;
-		// oos.writeInt(CommonConstants.READ_INT_MODE);
-		// oos.writeInt(CommonConstants.INIT_STEALING);
-		// oos.flush();
-		// Log.d("WorkerBroadcastReceiver",
-		// "after BROADCAST_WORKER_INIT_STEALING_ACTION");
-		// } catch (IOException e) {
-		// e.printStackTrace();
-		// } catch (InterruptedException e) {
-		// e.printStackTrace();
-		// }
-		// iswriting = false;
-		// this.notifyAll();
-		// }
-		//
-		// }
-
 	}
 
 	private void startFinishedActivty() {
@@ -312,7 +284,6 @@ public class WiFiDirectWorkerNonOwnerService extends IntentService {
 						oos.writeObject(cjobs);
 						oos.flush();
 
-						// JobPool.getInstance().setSentResults(true);
 
 					} catch (IOException e) {
 						e.printStackTrace();
@@ -587,43 +558,9 @@ public class WiFiDirectWorkerNonOwnerService extends IntentService {
 				} else {
 					Object objs = intent.getExtras().getSerializable(
 							CommonConstants.RESULT_COMPLETED_JOB_ARRAY_TYPE);
-					/*
-					 * if (objs != null && objs instanceof Object[]) { Object[]
-					 * cjobs = (Object[]) objs; Log.d("WorkerBroadcastReceiver",
-					 * "before sending results CompletedJob[] cjobs= " +
-					 * cjobs.length); if (oos != null && cjobs.length > 0) {
-					 * synchronized (this) { while (iswriting) { try {
-					 * this.wait(); } catch (InterruptedException e) {
-					 * e.printStackTrace(); } } iswriting = true; try {
-					 * oos.writeInt
-					 * (CommonConstants.READ_COMPLETED_JOB_OBJECT_ARRAY_MODE);
-					 * oos.writeObject(cjobs); oos.flush(); } catch (IOException
-					 * e) { e.printStackTrace(); }
-					 * 
-					 * Log.d("WorkerBroadcastReceiver",
-					 * "after sending results CompletedJob[] cjobs");
-					 * JobPool.getInstance().setSentResults(true); iswriting =
-					 * false; this.notifyAll(); } } } else {
-					 * Log.d("WorkerBroadcastReceiver",
-					 * "cjobs was not serialized properly"); }
-					 */
+
 					sendResultsAsObjects(objs);
 				}
-				// writecount++;
-
-				/*
-				 * if (JobPool.getInstance().isJobListEmpty()) {
-				 * 
-				 * if (JobPool.getInstance().isAllInitialJobsReceived()) { if
-				 * (ConnectionFactory.getInstance().isStealing) {
-				 * Log.d("WorkerBroadcastReceiver",
-				 * "Ive done and sent my jobs. going to STEAL!"); // steal();
-				 * stealFromDelegator();
-				 * 
-				 * } }
-				 * 
-				 * }
-				 */
 
 			} else if (intent.getAction().equals(
 					CommonConstants.BROADCAST_WORKER_NO_JOBS_TO_STEAL_ACTION)) {

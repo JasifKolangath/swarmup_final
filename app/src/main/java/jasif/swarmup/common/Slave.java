@@ -59,7 +59,6 @@ public class Slave implements Runnable {
 	 * and then will start stealing from others.
 	 * 
 	 * @param pSelf
-	 * @param pInd
 	 * @param pWorker
 	 */
 	public Slave(boolean pSelf, boolean pWorker, Context pAct,
@@ -103,7 +102,6 @@ public class Slave implements Runnable {
 	 * runs the transmitParams() method.
 	 * 
 	 * @param pInfo
-	 * @param pInd
 	 */
 	public Slave(WorkerInfo pInfo, Context pAct) {
 		this.workerInfo = pInfo;
@@ -180,8 +178,7 @@ public class Slave implements Runnable {
 	}
 	/**
 	 * In a worker, the string params are used to construct the job list
-	 * 
-	 * @param pMsg
+	 *
 	 */
 	public void assembleJobList(int pMode, int pStatus) {
 //		int mode = this.workerParams.paramMode;

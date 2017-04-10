@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/jasif_phacsin/SwarmUp_n/app/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/jasif_phacsin/SwarmUp_n/app/src/debug/jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/jasif_phacsin/swarmup_final/app/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/jasif_phacsin/swarmup_final/app/src/debug/jniLibs"/></dataSet></merger>

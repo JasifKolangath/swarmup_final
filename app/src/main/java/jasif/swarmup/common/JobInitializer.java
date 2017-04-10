@@ -29,10 +29,6 @@ public class JobInitializer {
 	public static int[][] fullSet = null;
 	private static Object appInfo = null;
 	private static int nodes = 0;
-	// private static int partition = CommonConstants.WORK_CHUNK;
-	private static int NperNode = 0;// how many partitions per node
-	private static int NperDele = 0;
-	private static int remPerLastWorker = 0;
 
 	private static final String TAG = "Stealer";
 	private long distributeTime = 0;
@@ -64,9 +60,7 @@ public class JobInitializer {
 	public static final String BROADCAST_STEALER_JOBS_TO_TRANSMIT_READY_ACTION = "org.com.swarmup.common.jobsreadytotransmit";
 	public static final String BROADCAST_DELEGATOR_BEING_A_VICTIM_ACTION = "org.com.swarmup.common.delegatorbeingavictim";
 
-	/**
-	 * contains BT addresses of workers who were victims
-	 */
+
 	private ArrayList<String> stealList = new ArrayList<String>();
 	private Slave ownSlave;
 
@@ -163,27 +157,13 @@ public class JobInitializer {
 		return this.stealList;
 	}
 
-	// public void initJobPool() {
-	//
-	// startTime = System.currentTimeMillis();// should change this to include
-	//
-	// // mandelObj = new Mandelbrot(iterations, N / partition, N);
-	// // PhotoRequest photo = new PhotoRequest(N , 0, 0);
-	// // JobPool.getInstance().initJobPool(pReqObj, N);//temp
-	//
-	// TimeMeter.getInstance().setJobPoolSetTime(
-	// System.currentTimeMillis() - startTime);
-	// Log.d("Stealer", "set up job time = "
-	// + (System.currentTimeMillis() - startTime));
-	//
-	// }
+
 	public long getPicoNetTime() {
 		return picoNetTime;
 	}
 
 	/**
-	 * 
-	 * @param isOwnWork
+	 *
 	 *            indicates if Delegating device also work
 	 * @throws IOException
 	 */
@@ -721,12 +701,7 @@ public class JobInitializer {
 	}
 
 	public boolean hasJobs(WorkerInfo pInfo) {
-		if (pInfo.connection_mode == ConnectionFactory.BT_MODE) {
-			if (pInfo.getBtDevice() != null) {
-				return ConnectionFactory.getInstance().getWorkerDeviceMap()
-						.get(pInfo.getBtDevice().getAddress()).hasJobs;
-			}
-		} else if (pInfo.connection_mode == ConnectionFactory.WIFI_MODE) {
+		if (pInfo.connection_mode == ConnectionFactory.WIFI_MODE) {
 			if (pInfo.getWiFiDirectAddress() != null) {
 				return ConnectionFactory.getInstance().getWorkerDeviceMap()
 						.get(pInfo.getWiFiDirectAddress()).hasJobs;

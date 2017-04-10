@@ -11,10 +11,6 @@ import jasif.swarmup.common.FileFactory;
 
 import android.util.Log;
 
-/**
- * 
- * @author tnfernando
- */
 public class Mandelbrot {
 
 	private int resultSet[][] = null;

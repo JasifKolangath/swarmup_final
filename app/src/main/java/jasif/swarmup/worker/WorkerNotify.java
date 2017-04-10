@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.concurrent.ArrayBlockingQueue;
 
-import jasif.swarmup.apps.facematch.FaceConstants;
-import jasif.swarmup.apps.facematch.JpegFilter;
 import jasif.swarmup.common.CommonConstants;
 import jasif.swarmup.common.FileFactory;
 import jasif.swarmup.common.Job;
@@ -20,13 +18,12 @@ import android.util.Log;
 
 /**
  * This class is used by the Worker side. When the jobs are received by the
- * WifiD/BT service, the service calls this class. This class stores an instance
+ * WifiD service, the service calls this class. This class stores an instance
  * of WorkerSwarm thread.
  * 
  * Previously assignJobsForWorker() was in class Stealer. It has been moved to
  * here.
- * 
- * @author tnfernando
+ *
  * 
  */
 public class WorkerNotify {
@@ -83,78 +80,11 @@ public class WorkerNotify {
 	}
 
 	public void deleteJobData() {
-		File dir = new File(Environment.getExternalStorageDirectory() + "/"
-				+ FaceConstants.FACE_MATCH_DIR);
-		// delete the contents of the faceMatch folder
-		FileFactory.getInstance().deleteFolderContents(dir);
 	}
 
 	private void populateWithJob(JobParams workerParams) {
 		if (workerParams != null) {
-			// Log.d("WorkerNotify", workerParams.paramMode + "");
-			if (workerParams.paramMode == CommonConstants.READ_FILE_NAME_MODE) {
-				Job job = new Job(workerParams.paramObject,
-						CommonConstants.JOB_NOT_GIVEN,
-						CommonConstants.READ_FILE_NAME_MODE,
-						CommonConstants.READ_STRING_MODE);
-				job.f = (File) workerParams.paramObject;
-				job.jobParams = workerParams.paramsString;
-
-				if (job.o instanceof File) {// facematch
-					File unFile = (File) job.o;
-					String extension = FileFactory.getInstance()
-							.getFileExtension(unFile.getAbsolutePath());
-					if (extension
-							.equalsIgnoreCase(FaceConstants.FILE_EXTENSION_ZIP)) {
-						try {
-							File sdDir = Environment
-									.getExternalStorageDirectory();
-							File dir = new File(sdDir,
-									FaceConstants.UNZIP_FILE_PATH + index);
-							dir.mkdir();
-							FileFactory.getInstance().unzip(unFile, dir);
-							unFile.delete();
-
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-						// indexes.add(new Integer(i));
-					}
-				}
-				Collection<File> filesInfolder = FileFactory.getInstance()
-						.listFiles(new File(getUnzipDirectoryPath(index)),
-								new JpegFilter[] { new JpegFilter() }, 0);
-				// Log.d("WorkerNotify", "files logged");
-				if (this.isStolen) {
-					if (filesInfolder != null && !filesInfolder.isEmpty()) {
-						Job[] jobsStolen = new Job[filesInfolder.size()];
-						int i = 0;
-						for (File file : filesInfolder) {
-							jobsStolen[i] = new Job(file.getAbsolutePath(), -1,
-									CommonConstants.READ_FILES_MODE,
-									CommonConstants.READ_STRING_MODE);
-							// Log.d("WorkerNotify", "stolen files logged");
-							i++;
-						}
-
-						// jobsStolen = filesInfolder.toArray(jobsStolen);
-						JobPool.getInstance().addJobs(jobsStolen, isStolen);
-					}
-
-				} else {
-					for (File file : filesInfolder) {
-						JobPool.getInstance().addJob(
-								new Job(file.getAbsolutePath(), -1,
-										CommonConstants.READ_FILES_MODE,
-										CommonConstants.READ_STRING_MODE));
-						// Log.d("WorkerNotify", file.getAbsolutePath());
-					}
-				}
-
-				// }
-				index++;
-
-			} else if (workerParams.paramMode == CommonConstants.READ_STRING_MODE) {
+			if (workerParams.paramMode == CommonConstants.READ_STRING_MODE) {
 				Job job = new Job(workerParams.paramObject,
 						CommonConstants.JOB_NOT_GIVEN,
 						CommonConstants.READ_STRING_MODE,
@@ -290,7 +220,7 @@ public class WorkerNotify {
 		public void run() {
 			if (this.toAddd != null) {
 				// JobPool.getInstance().addJob(toAddd);
-				populateWithJob(toAddd);
+				//populateWithJob(toAddd);
 			}
 
 		}
@@ -298,86 +228,85 @@ public class WorkerNotify {
 	}
 
 	private String getUnzipDirectoryPath(int i) {
-		return Environment.getExternalStorageDirectory().getAbsolutePath()
-				+ "/" + FaceConstants.UNZIP_FILE_PATH + i;
+		return null;
 	}
 
-	public void populateWithJob(Job pToAdd) {
-		if (pToAdd.o instanceof String[]) {
-			String[] fileNames = (String[]) pToAdd.o;
-			for (int x = 0; x < fileNames.length; x++) {
-				String extension = FileFactory.getInstance().getFileExtension(
-						fileNames[x]);
-				if (extension
-						.equalsIgnoreCase(FaceConstants.FILE_EXTENSION_ZIP)) {
-
-					try {
-						File sdDir = Environment.getExternalStorageDirectory();
-						File dir = new File(sdDir,
-								FaceConstants.UNZIP_FILE_PATH + index);
-						dir.mkdir();
-						File unFile = new File(fileNames[x]);
-						FileFactory.getInstance().unzip(unFile, dir);
-						unFile.delete();
-
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-					// indexes.add(new Integer(i));
-				} else {
-					// indexes.add(new Integer(i));
-				}
-			}
-
-		} else if (pToAdd.o instanceof File) {// facematch
-			File unFile = (File) pToAdd.o;
-			String extension = FileFactory.getInstance().getFileExtension(
-					unFile.getAbsolutePath());
-			if (extension.equalsIgnoreCase(FaceConstants.FILE_EXTENSION_ZIP)) {
-				try {
-					File sdDir = Environment.getExternalStorageDirectory();
-					File dir = new File(sdDir, FaceConstants.UNZIP_FILE_PATH
-							+ index);
-					dir.mkdir();
-					FileFactory.getInstance().unzip(unFile, dir);
-					unFile.delete();
-
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				// indexes.add(new Integer(i));
-			}
-		}
-		Collection<File> filesInfolder = FileFactory.getInstance().listFiles(
-				new File(getUnzipDirectoryPath(index)),
-				new JpegFilter[] { new JpegFilter() }, 0);
-		// Log.d("WorkerNotify", "files logged");
-		if (this.isStolen) {
-			if (filesInfolder != null && !filesInfolder.isEmpty()) {
-				Job[] jobsStolen = new Job[filesInfolder.size()];
-				int i = 0;
-				for (File file : filesInfolder) {
-					jobsStolen[i] = new Job(file.getAbsolutePath(), -1,
-							CommonConstants.READ_FILES_MODE);
-					// Log.d("WorkerNotify", "stolen files logged");
-					i++;
-				}
-
-				// jobsStolen = filesInfolder.toArray(jobsStolen);
-				JobPool.getInstance().addJobs(jobsStolen, isStolen);
-			}
-
-		} else {
-			for (File file : filesInfolder) {
-				JobPool.getInstance().addJob(
-						new Job(file.getAbsolutePath(), -1,
-								CommonConstants.READ_FILES_MODE));
-				// Log.d("WorkerNotify", file.getAbsolutePath());
-			}
-		}
-
-		// }
-		index++;
-
-	}
+//	public void populateWithJob(Job pToAdd) {
+//		if (pToAdd.o instanceof String[]) {
+//			String[] fileNames = (String[]) pToAdd.o;
+//			for (int x = 0; x < fileNames.length; x++) {
+//				String extension = FileFactory.getInstance().getFileExtension(
+//						fileNames[x]);
+//				if (extension
+//						.equalsIgnoreCase(FaceConstants.FILE_EXTENSION_ZIP)) {
+//
+//					try {
+//						File sdDir = Environment.getExternalStorageDirectory();
+//						File dir = new File(sdDir,
+//								FaceConstants.UNZIP_FILE_PATH + index);
+//						dir.mkdir();
+//						File unFile = new File(fileNames[x]);
+//						FileFactory.getInstance().unzip(unFile, dir);
+//						unFile.delete();
+//
+//					} catch (IOException e) {
+//						e.printStackTrace();
+//					}
+//					// indexes.add(new Integer(i));
+//				} else {
+//					// indexes.add(new Integer(i));
+//				}
+//			}
+//
+//		} else if (pToAdd.o instanceof File) {// facematch
+//			File unFile = (File) pToAdd.o;
+//			String extension = FileFactory.getInstance().getFileExtension(
+//					unFile.getAbsolutePath());
+//			if (extension.equalsIgnoreCase(FaceConstants.FILE_EXTENSION_ZIP)) {
+//				try {
+//					File sdDir = Environment.getExternalStorageDirectory();
+//					File dir = new File(sdDir, FaceConstants.UNZIP_FILE_PATH
+//							+ index);
+//					dir.mkdir();
+//					FileFactory.getInstance().unzip(unFile, dir);
+//					unFile.delete();
+//
+//				} catch (IOException e) {
+//					e.printStackTrace();
+//				}
+//				// indexes.add(new Integer(i));
+//			}
+//		}
+//		Collection<File> filesInfolder = FileFactory.getInstance().listFiles(
+//				new File(getUnzipDirectoryPath(index)),
+//				new JpegFilter[] { new JpegFilter() }, 0);
+//		// Log.d("WorkerNotify", "files logged");
+//		if (this.isStolen) {
+//			if (filesInfolder != null && !filesInfolder.isEmpty()) {
+//				Job[] jobsStolen = new Job[filesInfolder.size()];
+//				int i = 0;
+//				for (File file : filesInfolder) {
+//					jobsStolen[i] = new Job(file.getAbsolutePath(), -1,
+//							CommonConstants.READ_FILES_MODE);
+//					// Log.d("WorkerNotify", "stolen files logged");
+//					i++;
+//				}
+//
+//				// jobsStolen = filesInfolder.toArray(jobsStolen);
+//				JobPool.getInstance().addJobs(jobsStolen, isStolen);
+//			}
+//
+//		} else {
+//			for (File file : filesInfolder) {
+//				JobPool.getInstance().addJob(
+//						new Job(file.getAbsolutePath(), -1,
+//								CommonConstants.READ_FILES_MODE));
+//				// Log.d("WorkerNotify", file.getAbsolutePath());
+//			}
+//		}
+//
+//		// }
+//		index++;
+//
+//	}
 }

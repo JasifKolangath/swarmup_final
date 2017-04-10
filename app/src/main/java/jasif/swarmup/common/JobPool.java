@@ -36,8 +36,7 @@ import android.widget.Toast;
 
 /**
  * Contains the jobs in a LinkedList.
- * 
- * @author tnfernando
+ *
  * 
  */
 public class JobPool {

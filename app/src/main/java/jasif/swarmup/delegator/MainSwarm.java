@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
-import jasif.swarmup.apps.facematch.FaceConstants;
 import jasif.swarmup.common.CommonConstants;
 import jasif.swarmup.common.CompletedJob;
 import jasif.swarmup.common.ConnectionFactory;
@@ -28,8 +27,6 @@ import android.util.Log;
 /**
  * The MainSwarm represents the work the delegator has to do, if the delegator is
  * working.
- * 
- * @author tnfernando
  * 
  */
 public abstract class MainSwarm implements ResultsRead {
@@ -149,7 +146,7 @@ public abstract class MainSwarm implements ResultsRead {
 					pRes.stringResults.length());
 			// filename0:3:Pfilename1:0
 			results = pRes.stringResults
-					.split(FaceConstants.FACE_RESULT_BREAKER);
+					.split(":");
 			for (int i = 0; i < results.length; i++) {
 				num = results[i].split(":");
 				getResultFactory().addToMap(num[0], Integer.parseInt(num[1]));
@@ -255,13 +252,13 @@ public abstract class MainSwarm implements ResultsRead {
 		boolean result = true;
 		long ownCalcTime = CommonConstants.MONOTIME;
 		float startbattery = TimeMeter.getInstance().getBatteryLevel();
-		Log.d("Queenbee", "DONE - " + result);
+		Log.d("MainSwarm", "DONE - " + result);
 		float speedup = (float) ownCalcTime / (float) mandelTime;
 		StringBuffer s = new StringBuffer("\n"
 				+ DateFormat.getDateTimeInstance().format(new Date())
-				+ "  Result = " + result);
-		s.append("ownCalcTime = " + ownCalcTime + "  mandelTime = "
-				+ mandelTime + "  Speedup = " + speedup + "\n");
+				+ "  Result : " + result);
+		s.append(" mandelTime = "
+				+ mandelTime + " \n");
 		s.append("PARAMS : WorkChunk = " + CommonConstants.WORK_CHUNK
 				+ " COMPLETED_JOBS_BUFFER = "
 				+ CommonConstants.COMPLETED_JOBS_BUFFER + "  STEAL_CHUNK = "
@@ -272,7 +269,7 @@ public abstract class MainSwarm implements ResultsRead {
 
 		
 		s.append("battery start= "+startbattery+" battery end= "+batteryPct+"  Battery Usage= "+(batteryPct-startbattery));
-		Log.d("Queenbee", s.toString());
+		Log.d("MainSwarm ", s.toString());
 		System.out.println("ALL DONE!.  S = " + speedup);
 		getResultFactory().setSpeedup(speedup);
 

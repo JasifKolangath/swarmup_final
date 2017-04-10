@@ -5,8 +5,6 @@ package jasif.swarmup.common;
  * if String, only a String message will be sent to the workers. if File, first
  * a String message will be sent
  * 
- * @author tnfernando
- * 
  */
 public class JobParams {
 	public int paramMode = -1;

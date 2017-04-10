@@ -26,14 +26,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 /**
- * This class holds all the common Bluetooth functions.
- * 
- * @author tnfernando
  * 
  */
 public class ConnectionFactory {
 	private static ConnectionFactory theInstance = null;
-	private static BluetoothAdapter btInterface = null;
 	private static ArrayAdapter<String> newDevicesArrayAdapter = null;
 	/**
 	 * workerMap contains the String address (whether BT or WifiDirect) and
@@ -42,17 +38,10 @@ public class ConnectionFactory {
 	private static HashMap<String, WorkerInfo> workerMap = new HashMap<String, WorkerInfo>();
 	private static HashMap<String, WifiP2PdeviceWrapper> wifiDirectDevicesMap = new HashMap<String, WifiP2PdeviceWrapper>();;
 	private static ArrayList<WorkerInfo> connectedWorkerList =  new ArrayList<WorkerInfo>();;
-	private static ArrayList<String> silentWorkers =  new ArrayList<String>();;
-	private static BluetoothSocket delegatingSocket = null;
+	private static ArrayList<String> silentWorkers =  new ArrayList<String>();
 	private BroadcastReceiver bcastReceiver = null;
-	public static final int BT_ENABLE_SUCCESS = 1;
-	public static final int BT_ENABLE_NOT_SUCCESS = 0;
-	public static final int BT_ALREADY_ENABLED = 2;
 	private int numConnected = 0;
 	private int connectionState = CommonConstants.STATE_NONE;
-//	private AcceptThread mAcceptThread;
-//	private ConnectThread mConnectThread;
-//	private ConnectedThread mConnectedThread;
 	private long picoNetTime = 0;
 	public boolean isStealing = true;
 	public boolean isJobDone = false;
@@ -66,34 +55,17 @@ public class ConnectionFactory {
 	// public MyLock lock = new Peterson();
 	public Lock relock = new ReentrantLock();
 	public int connectionMode = -1;
-	public static int BT_MODE = 0;
 	public static int WIFI_MODE = 1;
 
 	// ExecutorService threadPoolWriter = Executors.newFixedThreadPool(3);
 
-	private ConnectionFactory() {
-		btInterface = BluetoothAdapter.getDefaultAdapter();
-	}
 
 	public synchronized static ConnectionFactory getInstance() {
 		if (theInstance == null) {
 			theInstance = new ConnectionFactory();
-			theInstance.connectionMode = WIFI_MODE;//for now
+			theInstance.connectionMode = WIFI_MODE;
 		}
 		return theInstance;
-	}
-
-	public BluetoothAdapter getBluetoothAdapter() {
-		return btInterface;
-	}
-
-	public synchronized void addConnection() {
-		numConnected++;
-		// System.out.println("BTFactory, connected " + numConnected);
-	}
-
-	public synchronized void removeConnection() {
-		numConnected--;
 	}
 
 	public int getNumberOfWorkers() {
@@ -120,230 +92,7 @@ public class ConnectionFactory {
 		return this.callbackObj;
 	}
 
-	private void initReceiver(String pTag, Activity pAct) {
-		final Activity act = pAct;
-		final String TAG = pTag;
-		bcastReceiver = new BroadcastReceiver() {
-			public void onReceive(Context context, Intent intent) {
 
-				String action = intent.getAction();
-				if (BluetoothDevice.ACTION_FOUND.equals(action)) {
-					BluetoothDevice device = intent
-							.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-					newDevicesArrayAdapter.add(device.getName() + "\n"
-							+ device.getAddress());
-					// workerList.add(device);
-					workerMap.put(device.getAddress(), new WorkerInfo(device));
-					// Log.d(TAG, " BTFactory--> " + device.getName() + "  : "
-					// + device.getAddress());
-
-				} else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED
-						.equals(action)) {
-					// Log.d(TAG, "Discovery finished!");
-					act.setTitle("Discovery finished!");
-					newDevicesArrayAdapter = null;
-				}
-
-				else if (BluetoothAdapter.ACTION_SCAN_MODE_CHANGED
-						.equals(action)) {
-
-					int mode = intent.getIntExtra(
-							BluetoothAdapter.EXTRA_SCAN_MODE,
-							BluetoothAdapter.ERROR);
-					String strMode = "";
-
-					switch (mode) {
-					case BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE:
-						strMode = "mode changed: SCAN_MODE_CONNECTABLE_DISCOVERABLE";
-						break;
-					case BluetoothAdapter.SCAN_MODE_CONNECTABLE:
-						strMode = "mode changed: SCAN_MODE_CONNECTABLE";
-						break;
-					case BluetoothAdapter.SCAN_MODE_NONE:
-						strMode = "mode changed: SCAN_MODE_NONE";
-						break;
-					}
-
-					Toast.makeText(act, strMode, Toast.LENGTH_LONG).show();
-					act.setTitle(strMode);
-					// Log.d(TAG, strMode);
-				}
-			}
-		};
-	}
-
-	private void initReceiver(String pTag) {
-		// final Activity act = pAct;
-		final String TAG = pTag;
-		bcastReceiver = new BroadcastReceiver() {
-			public void onReceive(Context context, Intent intent) {
-
-				String action = intent.getAction();
-				if (BluetoothDevice.ACTION_FOUND.equals(action)) {
-					BluetoothDevice device = intent
-							.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-					newDevicesArrayAdapter.add(device.getName() + "\n"
-							+ device.getAddress());
-					// workerList.add(device);
-					workerMap.put(device.getAddress(), new WorkerInfo(device));
-					// Log.d(TAG, " BTFactory--> " + device.getName() + "  : "
-					// + device.getAddress());
-
-				} else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED
-						.equals(action)) {
-					// Log.d(TAG, "Discovery finished!");
-					newDevicesArrayAdapter = null;
-				}
-
-				else if (BluetoothAdapter.ACTION_SCAN_MODE_CHANGED
-						.equals(action)) {
-
-					int mode = intent.getIntExtra(
-							BluetoothAdapter.EXTRA_SCAN_MODE,
-							BluetoothAdapter.ERROR);
-					String strMode = "";
-
-					switch (mode) {
-					case BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE:
-						strMode = "mode changed: SCAN_MODE_CONNECTABLE_DISCOVERABLE";
-						break;
-					case BluetoothAdapter.SCAN_MODE_CONNECTABLE:
-						strMode = "mode changed: SCAN_MODE_CONNECTABLE";
-						break;
-					case BluetoothAdapter.SCAN_MODE_NONE:
-						strMode = "mode changed: SCAN_MODE_NONE";
-						break;
-					}
-
-					// Log.d(TAG, strMode);
-				}
-			}
-		};
-	}
-
-	public int startBluetooth(Activity pAct, String pTag) {
-
-		// If the adapter is null, then Bluetooth is not supported
-		if (btInterface == null) {
-			Toast.makeText(pAct, "Bluetooth is not available",
-					Toast.LENGTH_LONG).show();
-			pAct.finish();
-			return BT_ENABLE_NOT_SUCCESS;
-		}
-
-		initReceiver(pTag, pAct);
-		if (!btInterface.isEnabled()) {
-			Intent enableBtIntent = new Intent(
-					BluetoothAdapter.ACTION_REQUEST_ENABLE);
-			pAct.startActivityForResult(enableBtIntent,
-					CommonConstants.REQUEST_ENABLE_BT);
-			pAct.setTitle("Bluetooth is now enabled");
-			return BT_ENABLE_SUCCESS;
-		} else {
-			pAct.setTitle("Bluetooth is now enabled");
-			return BT_ALREADY_ENABLED;
-		}
-
-	}
-
-	public int startBluetooth(String pTag) {
-
-		// If the adapter is null, then Bluetooth is not supported
-		if (btInterface == null) {
-			// Toast.makeText(pAct, "Bluetooth is not available",
-			// Toast.LENGTH_LONG).show();
-			// pAct.finish();
-			return BT_ENABLE_NOT_SUCCESS;
-		}
-
-		initReceiver(pTag);
-		if (!btInterface.isEnabled()) {
-			// Intent enableBtIntent = new Intent(
-			// BluetoothAdapter.ACTION_REQUEST_ENABLE);
-			// pAct.startActivityForResult(enableBtIntent,
-			// CommonConstants.REQUEST_ENABLE_BT);
-			// TODO: Confirmation dialog here
-			btInterface.enable();
-			// pAct.setTitle("Bluetooth is now enabled");
-			return BT_ENABLE_SUCCESS;
-		} else {
-			// pAct.setTitle("Bluetooth is now enabled");
-			return BT_ALREADY_ENABLED;
-		}
-
-	}
-
-	public void cancelDiscovery() {
-		if (btInterface != null) {
-			btInterface.cancelDiscovery();
-		}
-	}
-
-	/**
-	 * Need to call startBluetooth() before calling this.
-	 * 
-	 * @param pAct
-	 * @param pTag
-	 * @param pAdapter
-	 * @param pD
-	 */
-	public void lookForDevices(Activity pAct, String pTag, boolean pD,
-			ArrayAdapter<String> pArrayAdapter) {
-		final String TAG = pTag;
-		newDevicesArrayAdapter = pArrayAdapter;
-		newDevicesArrayAdapter.clear();
-
-		if (pD)
-			pAct.setTitle(R.string.txtScanning);
-
-		pAct.setProgressBarIndeterminateVisibility(true);
-		if (btInterface.isDiscovering()) {
-			btInterface.cancelDiscovery();
-		}
-		btInterface.startDiscovery();
-
-		// Register the BroadcastReceiver
-		IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-		pAct.registerReceiver(bcastReceiver, filter); // Don't forget to
-		// unregister
-		// during onDestroy
-
-		// Register for broadcasts when discovery has finished
-		filter = new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);
-		pAct.registerReceiver(bcastReceiver, filter);
-		// return workerList;
-	}
-
-	/**
-	 * Need to call startBluetooth() before calling this.
-	 * 
-	 * @param pTag
-	 * @param pAdapter
-	 * @param pD
-	 */
-	/*
-	 * public void lookForDevices(String pTag, boolean pD, ArrayAdapter<String>
-	 * pArrayAdapter) { // workerList = new ArrayList<String>(); workerMap = new
-	 * HashMap<String, WorkerInfo>(); connectedWorkerList = new
-	 * ArrayList<WorkerInfo>(); final String TAG = pTag; newDevicesArrayAdapter
-	 * = pArrayAdapter; newDevicesArrayAdapter.clear();
-	 * 
-	 * if (pD) Log.d(TAG, "doDiscovery()"); //
-	 * pAct.setTitle(R.string.txtScanning);
-	 * 
-	 * // pAct.setProgressBarIndeterminateVisibility(true); if
-	 * (btInterface.isDiscovering()) { btInterface.cancelDiscovery(); }
-	 * btInterface.startDiscovery();
-	 * 
-	 * // Register the BroadcastReceiver IntentFilter filter = new
-	 * IntentFilter(BluetoothDevice.ACTION_FOUND);
-	 * pAct.registerReceiver(bcastReceiver, filter); // Don't forget to //
-	 * unregister // during onDestroy
-	 * 
-	 * // Register for broadcasts when discovery has finished filter = new
-	 * IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);
-	 * pAct.registerReceiver(bcastReceiver, filter); // return workerList; }
-	 */
 	public HashMap<String, WorkerInfo> getWorkerDeviceMap() {
 		return workerMap;
 	}
@@ -352,15 +101,9 @@ public class ConnectionFactory {
 		return wifiDirectDevicesMap;
 	}
 
-	public void mapWifiDirectToBT(String pBTMac) {
-		WorkerInfo w = this.workerMap.get(pBTMac);
-		if (w != null) {
-
-		}
-	}
 
 	/**
-	 * Checks if all connected devices are mapped with BT and wifiDirect MACs.
+	 * Checks if all connected devices are mapped with wifiDirect MACs.
 	 * 
 	 * @return
 	 */
@@ -565,13 +308,6 @@ public class ConnectionFactory {
 		}
 	}
 
-	public void setDelegatingSocket(BluetoothSocket pSocket) {
-		delegatingSocket = pSocket;
-	}
-
-	public BluetoothSocket getDelegatingSocket() {
-		return delegatingSocket;
-	}
 
 	public void setAsDiscoverable(Activity pAct) {
 		Intent discoverableIntent = new Intent(

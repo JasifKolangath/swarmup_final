@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         CardView integerCard = (CardView) findViewById(R.id.cardViewInteger);
         CardView mandelCard = (CardView) findViewById(R.id.cardViewMandel);
-        //CardView faceCard = (CardView) findViewById(R.id.cardViewFace);
         delegate = (RadioButton) findViewById(R.id.delegate_radio);
         worker = (RadioButton) findViewById(R.id.worker_radio);
         //startActivity(new Intent(this,IntegerSumDelegatorActivity.class));
@@ -111,15 +110,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(intent);
                     }
                     break;
-//                case R.id.cardViewFace:
-//                    if (delegate.isChecked()) {
-////                        intent = new Intent(getApplicationContext(), FaceMatchDelegatorActivity.class);
-////                        startActivity(intent);
-//                    } else {
-////                        intent = new Intent(getApplicationContext(), FaceMatchWorkerActivity.class);
-////                        startActivity(intent);
-//                    }
-//                    break;
             }
     }
     public void onDestroy() {

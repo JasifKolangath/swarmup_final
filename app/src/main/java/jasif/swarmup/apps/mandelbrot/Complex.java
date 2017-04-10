@@ -2,7 +2,6 @@ package jasif.swarmup.apps.mandelbrot;
 
 /**
  * http://www.cs.princeton.edu/introcs/32class/Complex.java.html
- * @author tnfernando
  */
 
 /*************************************************************************

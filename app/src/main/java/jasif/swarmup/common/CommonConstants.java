@@ -123,37 +123,8 @@ public class CommonConstants {
 	public static String JOBS_UPDATED = "JobsUpdated";
 	public static int ADD_JOB = 1;
 	public static int REMOVE_JOB = -1;
-	// testing only
-	// Ideos i =200
-	// public static final long MONOTIME = 208438;
-	// Ideos i =500
-	// public static final long MONOTIME = 540866;
-
-	// public static final long MONOTIME = 77910;//faceMatch, Nexus S, 30 photos
-	// public static final long MONOTIME = 253708;//faceMatch, Nexus 7, 240
-	// photos
-	// public static final long MONOTIME = 62903;//faceMatch, Nexus 7, 60 photos
-	// public static final long MONOTIME = 126389;// faceMatch, Nexus 7, 120
-	// photos
-	// public static final long MONOTIME = 253708;//faceMatch, Nexus 7, 240
-	// photos
-	// public static final long MONOTIME = 511046;//faceMatch, Nexus 7, 480
-	// photos
-	// public static final long MONOTIME = 1046070;//faceMatch, Nexus 7, 960
-	// photos
-	// public static final long MONOTIME = 2112755;//faceMatch, Nexus 7, 1920
-	// photos
-
-	// mandelbrot
-	// public static final long MONOTIME = 27301;//26322;//numberOfRows =
-	// 300;,iter = 200;
-	//public static final long MONOTIME = 185910;//iter=1500
 	public static final long MONOTIME = 372954;//iter=3000
 
-//64398;
-//33584;// 26322;//numberOfRows =
-												// 300;,iter = 250;
-	public static final int TAKE_PHOTO_CODE = 6666;
 
 	// App Info modes
 	public static final int TEXT = 1;
@@ -166,6 +137,5 @@ public class CommonConstants {
 	public static final int PRIORITY_LET_OTHER_STEAL = 1;
 
 	public static final int CONNECTION_MODE_WIFIDIRECT = 0;
-	public static final int CONNECTION_MODE_BLUETOOTH = 1;
 
 }

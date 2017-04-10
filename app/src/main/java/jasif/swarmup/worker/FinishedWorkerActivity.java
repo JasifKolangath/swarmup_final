@@ -4,7 +4,7 @@ import java.io.File;
 
 import jasif.swarmup.MainActivity;
 import jasif.swarmup.R;
-import jasif.swarmup.apps.facematch.FaceConstants;
+import jasif.swarmup.apps.mandelbrot.MandelConstants;
 import jasif.swarmup.common.FileFactory;
 
 
@@ -32,7 +32,7 @@ public class FinishedWorkerActivity extends AppCompatActivity {
 			public void onClick(View v) {
 				Intent deleIntent = new Intent(FinishedWorkerActivity.this, MainActivity.class);
 				deleIntent.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
-				startActivityForResult(deleIntent, FaceConstants.FINISHED_DELEGATOR);
+				startActivityForResult(deleIntent, MandelConstants.FINISHED_DELEGATOR_MANDEL);
 				
 			}
 		});
@@ -40,9 +40,5 @@ public class FinishedWorkerActivity extends AppCompatActivity {
 	
 	public void onDestroy(){
 		super.onDestroy();
-		File dir = new File(Environment.getExternalStorageDirectory() + "/"
-				+ FaceConstants.FACE_MATCH_DIR);
-		// delete the contents of the faceMatch folder
-		FileFactory.getInstance().deleteFolderContents(dir);
 	}
 }

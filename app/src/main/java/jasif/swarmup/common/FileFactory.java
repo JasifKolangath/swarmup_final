@@ -33,8 +33,6 @@ import android.util.Log;
 import dalvik.system.PathClassLoader;
 
 /**
- * 
- * @author tnfernando
  */
 public class FileFactory {
 
@@ -81,10 +79,6 @@ public class FileFactory {
 
 		if (sdDir.canWrite()) {
 			File txtfile = new File(sdDir, path);
-			// FileWriter txwriter = new FileWriter(txtfile);
-			// BufferedWriter out = new BufferedWriter(txwriter);
-			// out.write(pStr);
-			// out.close();
 
 			FileOutputStream fOut = new FileOutputStream(txtfile, true);
 			OutputStreamWriter osw = new OutputStreamWriter(fOut);
@@ -95,30 +89,9 @@ public class FileFactory {
 
 		}
 
-		// FileOutputStream fOut = pAct.openFileOutput(path, pAct.MODE_APPEND);
-		// OutputStreamWriter osw = new OutputStreamWriter(fOut);
-		//
-		// osw.write(pStr);
-		// osw.flush();
-		// osw.close();
 
 	}
 
-	/*
-	 * public boolean writeFile(String path, String pStr, boolean pFlag, String
-	 * pFirst) { FileConnection fc = null; OutputStream os = null;
-	 * OutputStreamWriter w = null; long offset; boolean res = false; try { fc =
-	 * (FileConnection) Connector.open(path); if (fc.exists()) { // file exists,
-	 * open at EOF. offset = fc.fileSize(); os = fc.openOutputStream(offset); }
-	 * else { // file does not exist, create and open. fc.create(); os =
-	 * fc.openOutputStream(); } w = new OutputStreamWriter(os, "US-ASCII"); if
-	 * (!pFlag) { w.write(pFirst); // pFlag = true; } w.write(pStr); w.close();
-	 * fc.close(); res = true; } catch (Exception e) { e.printStackTrace(); }
-	 * finally { try { if (null != w) { w.close(); } w = null; } catch
-	 * (Exception e2) { e2.printStackTrace(); } try { if (null != fc) {
-	 * fc.close(); } fc = null; } catch (Exception e3) { e3.printStackTrace(); }
-	 * } return res; }
-	 */
 
 	public String[] tokenize(String pS, String pToken, int len) {
 		String[] retSrr = new String[len];
@@ -138,26 +111,6 @@ public class FileFactory {
 		return retSrr;
 	}
 
-	// public String[] tokenize2(String pS, String pToken, int len) {
-	// String[] retSrr = new String[len];
-	// int i = 0;
-	//
-	// while (true) {
-	// int ind = pS.indexOf(pToken);
-	// String st = pS.substring(0, ind);
-	// retSrr[i] = st;
-	// System.out.println("st = " + st);
-	// pS = pS.substring(ind + 1, pS.length());
-	// // System.out.println(s);
-	// if (pS.indexOf(":") < 1) {
-	// st = pS;
-	// retSrr[i + 1] = st;
-	// break;
-	// }
-	// i++;
-	// }
-	// return retSrr;
-	// }
 
 	public static final byte[] intToByteArray(int value) {
 		return new byte[] { (byte) (value >>> 24), (byte) (value >>> 16),
@@ -186,15 +139,6 @@ public class FileFactory {
 		return (int) ( // NOTE: type cast not necessary for int
 		(0xff & data[0]) << 24 | (0xff & data[1]) << 16 | (0xff & data[2]) << 8 | (0xff & data[3]) << 0);
 	}
-
-	// public int toLong(byte[] data) {
-	// if (data == null || data.length != 8)
-	// return 0x0;
-	// // ----------
-	// return (int) ( // NOTE: type cast not necessary for int
-	// (0xff & data[0]) << 24 | (0xff & data[1]) << 16 | (0xff & data[2]) << 8 |
-	// (0xff & data[3]) << 0);
-	// }
 
 	public void logJobDone(String pS) {
 		this.stealTracer.append(pS);
@@ -435,12 +379,7 @@ public class FileFactory {
 						Log.v("FileUtils", "Added: " + entry.getName());
 					}
 				}
-				// if ((recurse <= -1) || (recurse > 0 && entry.isDirectory()))
-				// {
-				// recurse--;
-				// files.addAll(listFiles(entry, filter, recurse));
-				// recurse++;
-				// }
+
 			}
 		}
 		return files;
@@ -456,12 +395,6 @@ public class FileFactory {
 		fileCount++;
 		ConnectionFactory.getInstance().relock.unlock();
 		buf.append(pName.substring(pName.indexOf("."), pName.length()));
-
-		// String name = pName.substring(0, pName.indexOf("."));
-		// name +=fileCount+"";
-		// String extension = pName.substring(pName.indexOf("."),
-		// pName.length());
-		// pName = name+extension;
 
 		OutputStream out = null;
 		try {
@@ -487,12 +420,6 @@ public class FileFactory {
 	public String getFileFromByteArray2(String pName, byte[] arr)
 			throws IOException {
 		File sdDir = Environment.getExternalStorageDirectory();
-
-		// String name = pName.substring(0, pName.indexOf("."));
-		// name +=fileCount+"";
-		// String extension = pName.substring(pName.indexOf("."),
-		// pName.length());
-		// pName = name+extension;
 
 		OutputStream out = null;
 		try {

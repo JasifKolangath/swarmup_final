@@ -3,7 +3,6 @@ package jasif.swarmup.worker;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import jasif.swarmup.apps.facematch.FaceConstants;
 import jasif.swarmup.common.CommonConstants;
 import jasif.swarmup.common.CompletedJob;
 import jasif.swarmup.common.Job;
@@ -18,8 +17,7 @@ import android.os.Bundle;
 
 /**
  * A WorkerSwarm represents a Worker device.
- * 
- * @author tnfernando
+ *
  * 
  */
 public abstract class WorkerSwarm extends Slave {
@@ -38,26 +36,6 @@ public abstract class WorkerSwarm extends Slave {
 
 	public abstract CompletedJob doAppSpecificJob(Object pParam);
 
-	// private void runFaceMatch(String pS) {
-	//
-	// String extension = FileFactory.getInstance().getFileExtension(pS);
-	// if ((extension.equalsIgnoreCase(FaceConstants.FILE_EXTENSION_JPEG))
-	// || (extension
-	// .equalsIgnoreCase(FaceConstants.FILE_EXTENSION_JPG))) {
-	// Integer res = Integer.valueOf(imageSearch.search(pS));
-	// // results.add(res);
-	// CompletedJob cj = new CompletedJob(
-	// CommonConstants.READ_STRING_MODE, FileFactory.getInstance()
-	// .getFileNameFromFullPath(pS), -1, null);
-	// cj.intValue = res.intValue();
-	// // cj.index = i;
-	// this.doneJobs.add(cj);
-	// FaceResult.getInstance().addToMap(cj.stringValue, cj.intValue);
-	// } else {
-	// Log.d("EXTENSION OTHER = ", extension);
-	// }
-	//
-	// }
 
 	@Override
 	protected void doOwnWorkForWorker() throws IOException {
@@ -100,7 +78,7 @@ public abstract class WorkerSwarm extends Slave {
 					StringBuffer res = new StringBuffer();
 					res.append(CommonConstants.RESULT_SYMBOL);
 					for (CompletedJob cj : cjobs) {
-						res.append(FaceConstants.FACE_RESULT_BREAKER);
+						res.append(":");
 						res.append(cj.stringValue);
 						res.append(CommonConstants.APP_REQUEST_SEPERATOR);
 						res.append(cj.intValue);

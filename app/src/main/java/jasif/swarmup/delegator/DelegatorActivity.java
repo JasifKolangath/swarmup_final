@@ -68,23 +68,21 @@ import android.widget.AdapterView.OnItemClickListener;
  * 
  * DelegatorActivity searches for workers, connects to them, and handles job and
  * result transmission as well as checking for worker heart beats.
- * 
- * @author tnefernando
+ *
  * 
  */
 public abstract class DelegatorActivity extends AppCompatActivity {
 	private String id = null;
 
 	ProgressDialog progressDialog;
-	private static final String TAG = "FaceMatchActivity";
+	private static final String TAG = "Activity";
 	private ArrayList<String> areyouthereList = null;
 	private ArrayAdapter<WorkerInfo> connected = null;
 
 	// to get data from our WiFiDirectService
-	private static final String TAG2 = "FaceMatchActivity";
+	private static final String TAG2 = "Activity";
 	private ArrayAdapter<String> mNewDevicesArrayAdapter = null;
 	private ListView newDevicesListView = null;
-	public static final String BROADCAST_FACEMATCHDELEGATOR_ACTION = "org.com.swarmup.apps.facematch";
 	boolean mBound = false;
 	private Runnable deleThread = null;
 	private Runnable deleStolenThread = null;
@@ -173,7 +171,6 @@ public abstract class DelegatorActivity extends AppCompatActivity {
 				.addAction(WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION);
 		intentFilter
 				.addAction(WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION);
-		intentFilter.addAction(BROADCAST_FACEMATCHDELEGATOR_ACTION);// niro
 		intentFilter
 				.addAction(JobInitializer.BROADCAST_STEALER_JOBS_TO_TRANSMIT_READY_ACTION);
 		intentFilter
@@ -621,32 +618,6 @@ public abstract class DelegatorActivity extends AppCompatActivity {
 		this.peersConnected.get(pAdr).isConnected = false;
 		executeAddedBackJobs();
 
-		/*
-		 * this is for connections lasting more than 30 minutes. because every
-		 * 30 minutes there is a dnsmasq(7837): DHCPACK(p2p-p2p0-3)
-		 * 192.168.49.58 0a:60:6e:a9:84:95 android-8e3f89745178b63f
-		 * dnsmasq(7837): DHCPREQUEST(p2p-p2p0-3) 192.168.49.37
-		 * 12:bf:48:f6:a1:ab thing happening that drops the live connections. we
-		 * dont know why this happens, but we need that for testing extreme
-		 * datasets (>1GB). so when that happens we connect from start again.
-		 */
-		/*
-		 * JobPool.getInstance().addLostWorkerJobsBack(pAdr); try { WorkerInfo
-		 * deadWorker =
-		 * ConnectionFactory.getInstance().getWorkerDeviceMap().get(pAdr);
-		 * if(deadWorker!=null){ if(deadWorker.getSocket()!=null){
-		 * if(deadWorker.getSocket().getInputStream()!=null){
-		 * deadWorker.getSocket().getInputStream().close(); }
-		 * if(deadWorker.getSocket().getOutputStream()!=null){
-		 * deadWorker.getSocket().getOutputStream().close(); }
-		 * deadWorker.getSocket().close(); } } } catch (IOException e) {
-		 * e.printStackTrace(); }
-		 * ConnectionFactory.getInstance().getWorkerDeviceMap().remove(pAdr);
-		 * ConnectionFactory
-		 * .getInstance().onWorkerSilentAtConnectedWorkersRemove(pAdr);
-		 * this.heartbeatTimestamps.remove(pAdr);
-		 * this.peersConnected.remove(pAdr); executeAddedBackJobs();
-		 */
 
 	}
 
@@ -672,10 +643,6 @@ public abstract class DelegatorActivity extends AppCompatActivity {
 
 	}
 
-	// ///////////////////////////////////////////////END class
-	// WifiChannelListener
-
-	// /////////////////////////////////////////////////////////////////////
 	private class ClientWiFiBroadcastReceiver extends BroadcastReceiver {
 		private WifiP2pManager manager;
 		private Channel channel;
@@ -849,10 +816,7 @@ public abstract class DelegatorActivity extends AppCompatActivity {
 			}
 		}
 
-	}// //////////////////////////////////////////////////////END class
-		// ClientWiFiBroadcastReceiver
-
-	// /////////////////////////////////////////////////////////////////////
+	}
 
 	private class ClientPeerListListener implements PeerListListener {
 
@@ -883,9 +847,6 @@ public abstract class DelegatorActivity extends AppCompatActivity {
 
 	}
 
-	// /////////////////////////////////////////////////////////////////////
-
-	// //////////////////////////////////////////////////////
 	private class ClientSocketThread extends Thread {
 		private String wifiMACAddress = null;
 		Socket cWorker = null;
@@ -974,10 +935,6 @@ public abstract class DelegatorActivity extends AppCompatActivity {
 
 	}
 
-	// /////////////////////////////////////////////// END class
-	// ClientSocketThread
-
-	// //////////////////////////////////////////////////////
 	/**
 	 * This thread handles all incoming communication from workers. Each worker
 	 * has its own DelegatorReadThread.
@@ -1238,8 +1195,6 @@ public abstract class DelegatorActivity extends AppCompatActivity {
 		}
 	}
 
-	// //////////////////////////////////////////////////////////////////// END
-	// class DelegatorReadThread
 	private void processObjectArrayRead(ResultTransmitObject[] pObjs,
 			String pWifi, long pT) {
 		ReceivedResults resObj = new ReceivedResults(
@@ -1262,17 +1217,9 @@ public abstract class DelegatorActivity extends AppCompatActivity {
 			if (pS.contains(CommonConstants.MSG_BREAK)) {
 				pS = pS.substring(0, pS.lastIndexOf(CommonConstants.MSG_BREAK));
 
-				if (pS.startsWith(CommonConstants.RESULT_SYMBOL)) {// then
-																	// these
-																	// are
-																	// not
-																	// jobs.
-																	// Possibly
-																	// job
-																	// results
-																	// in
-																	// String
-																	// format.
+				if (pS.startsWith(CommonConstants.RESULT_SYMBOL)) {
+					// then these are not jobs. Possibly job results in String format.
+
 					Log.d("processStringRead",
 							"Received string results . pMsg.startsWith(CommonConstants.RESULT_SYMBOL) ");
 					ReceivedResults resObj = new ReceivedResults(
@@ -1381,10 +1328,8 @@ public abstract class DelegatorActivity extends AppCompatActivity {
 		}
 	}
 
-	// ///////////////////////////////////////////////////////////////////////////
 	/**
 	 * The delegator needs to be the p2p group owner.
-	 *
 	 * 
 	 */
 	private class ConnectionListenerClass implements ConnectionInfoListener {
@@ -1417,9 +1362,7 @@ public abstract class DelegatorActivity extends AppCompatActivity {
 
 		}
 
-	}// ///////////////////////////////////END class ConnectionListenerClass
-
-	// /////////////////////////////////////////////////////
+	}
 
 	public class OwnerWriteThread extends Thread {
 		String mode = "";
@@ -1610,10 +1553,6 @@ public abstract class DelegatorActivity extends AppCompatActivity {
 
 	}
 
-	// ///////////////////////////////////////////////////////////////////////////END
-	// class OwnerWriteThread
-
-	// ///////////////////////////////////////////////////////////////////////
 	private class ConnectAsOwner implements Runnable {
 
 		@Override
@@ -1623,9 +1562,6 @@ public abstract class DelegatorActivity extends AppCompatActivity {
 		}
 
 	}
-
-	// ///////////////////////////////////////////////////////////////////////
-	// END class ConnectAsOwner
 
 	private void connect_as_owner() {
 
